@@ -233,14 +233,24 @@ document.addEventListener('DOMContentLoaded', function() {
     loadProgress();
     renderModules();
     initSalesChart();
-    
-    // Event Listeners
-    document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
-    document.querySelector('.close').addEventListener('click', closeModal);
+
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+
+    const closeBtn = document.querySelector('#quiz-modal .close');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+    }
+
     window.addEventListener('click', (e) => {
-        if (e.target.classList.contains('modal')) closeModal();
+        if (e.target.classList && e.target.classList.contains('modal')) {
+            closeModal();
+        }
     });
 });
+
 
 function initApp() {
     const savedTheme = localStorage.getItem('theme') || 'dark';

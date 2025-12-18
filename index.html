@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analyst Mastery Course</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Top Bar -->
+        <header class="top-bar">
+            <div class="logo">📊 Data Analyst Mastery</div>
+            <div class="top-controls">
+                <button id="theme-toggle" class="theme-btn">🌙</button>
+                <span id="progress-total" class="progress-text">0%</span>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <!-- Sidebar -->
+            <nav class="sidebar" id="sidebar">
+                <div class="sidebar-header">
+                    <h2>Course Progress</h2>
+                    <div id="overall-progress" class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+                <ul class="module-list" id="module-list">
+                    <!-- Modules populated by JS -->
+                </ul>
+            </div>
+
+            <!-- Main Content -->
+            <main class="content-area">
+                <div class="enroll-banner" id="enroll-banner">
+                    <h1>Data Analyst Mastery Course</h1>
+                    <p>Master Excel, SQL, Python, Tableau & Real Projects</p>
+                    <button class="enroll-btn" onclick="showPayment()">Enroll Now - $99</button>
+                </div>
+
+                <div class="module-content" id="module-content">
+                    <!-- Dynamic content -->
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="quiz-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="quiz-title"></h3>
+                <span class="close">&times;</span>
+            </div>
+            <div id="quiz-questions"></div>
+            <button id="quiz-submit">Submit Quiz</button>
+        </div>
+    </div>
+
+    <div id="certificate-modal" class="modal">
+        <div class="modal-content certificate">
+            <canvas id="certificate-canvas" width="800" height="600"></canvas>
+            <button onclick="downloadCertificate()">Download Certificate</button>
+        </div>
+    </div>
+
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <h3>Payment Processing</h3>
+            <p>Stripe integration placeholder. Course unlocked!</p>
+            <button onclick="enrollCourse()">Complete Enrollment</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
